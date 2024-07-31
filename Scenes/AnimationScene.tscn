@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwbmtsdnjwbed"]
+
+[ext_resource type="Texture2D" uid="uid://dybnnllexoq5w" path="res://Art/Backgrounds/stage.png" id="1_t0b6s"]
+
+[node name="AnimationScene" type="Node2D"]
+
+[node name="GUI" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="GUI"]
+texture_filter = 1
+texture = ExtResource("1_t0b6s")
+
+[node name="Characters" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Assets" type="Node2D" parent="."]

@@ -1,0 +1,612 @@
+[gd_scene load_steps=71 format=3 uid="uid://dwu7dpjhnd45t"]
+
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
+[ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
+[ext_resource type="Script" path="res://Scripts/AnimationController.gd" id="2_ob61g"]
+[ext_resource type="Texture2D" uid="uid://bjwvviec38hfc" path="res://Art/GUI details/frame.png" id="3_t4dv4"]
+[ext_resource type="Texture2D" uid="uid://dohbhfyowycf6" path="res://Art/Characters/isaac newton.png" id="5_i3da5"]
+[ext_resource type="Texture2D" uid="uid://c5307vu5swrkc" path="res://Art/Characters/AlbertEinsteinRight.png" id="5_lx4q4"]
+[ext_resource type="Texture2D" uid="uid://bn6jm10jmqh6s" path="res://Art/Characters/Animation Spritesheets/albert einsteinTalkingAnimation.png" id="5_xexko"]
+[ext_resource type="Texture2D" uid="uid://bta8pdf7tdcc1" path="res://Art/Characters/albertEinsteinTalkingRight.png" id="7_5lnru"]
+[ext_resource type="Texture2D" uid="uid://o5vf1jry5cia" path="res://Art/Characters/william shakespeare.png" id="7_m1auk"]
+[ext_resource type="Texture2D" uid="uid://cjjccor1wf8as" path="res://Art/Characters/BenjaminFranklinLeft.png" id="8_fki5i"]
+[ext_resource type="Texture2D" uid="uid://bx37vomj87ij2" path="res://Art/Characters/william shakespearetalking.png" id="8_v0vnj"]
+[ext_resource type="Texture2D" uid="uid://b4mqeq1pj33ta" path="res://Art/Characters/isaacNewtonLeft.png" id="8_v6db4"]
+[ext_resource type="Texture2D" uid="uid://dxfsx2wk26w6x" path="res://Art/Characters/BenjaminFranklinRight.png" id="9_w6058"]
+[ext_resource type="Texture2D" uid="uid://cwk87qof8eu2p" path="res://Art/Characters/BenjaminFranklinTalkingLeft.png" id="10_ijbq5"]
+[ext_resource type="Texture2D" uid="uid://xpivhcgu7rum" path="res://Art/Characters/isaacNewtonTalkingLeft.png" id="10_t2y7b"]
+[ext_resource type="Texture2D" uid="uid://cqww1u4vmpxec" path="res://Art/Characters/BenjaminFranklinTalkingRight.png" id="11_8q4he"]
+[ext_resource type="Texture2D" uid="uid://bmygn4e3w6c5v" path="res://Art/Characters/IsaacnewtonRightTalkign.png" id="11_htxxd"]
+[ext_resource type="Texture2D" uid="uid://buc0qmmjeyl3t" path="res://Art/Characters/Ion CreangaLeft.png" id="12_lj2br"]
+[ext_resource type="Texture2D" uid="uid://cxb4rxhasmqmy" path="res://Art/Characters/MihaiEminescuLeft.png" id="12_vmfqp"]
+[ext_resource type="Texture2D" uid="uid://bfnvcsthi5ljg" path="res://Art/Characters/william shakespeare left.png" id="12_yq76n"]
+[ext_resource type="Texture2D" uid="uid://o65fmpuegl8j" path="res://Art/Characters/MihaiEminescuRight.png" id="13_4gmu8"]
+[ext_resource type="Texture2D" uid="uid://cdk6ma2glu1vm" path="res://Art/Characters/Ion CreangaRight.png" id="13_dvs8t"]
+[ext_resource type="Texture2D" uid="uid://dp7rrkqpu3p2v" path="res://Art/Characters/MihaiEminescuTalkingLeft.png" id="14_3vjn3"]
+[ext_resource type="Texture2D" uid="uid://c2235ldiwntwm" path="res://Art/Characters/Ion CreangaTalkingLeft.png" id="14_8077k"]
+[ext_resource type="Texture2D" uid="uid://c6f8q40mnus71" path="res://Art/Characters/william shakespeare left talking.png" id="14_ulnfv"]
+[ext_resource type="Texture2D" uid="uid://k4ehf8c87s6b" path="res://Art/Characters/MihaiEminescuTalkingRight.png" id="15_6s8ul"]
+[ext_resource type="Texture2D" uid="uid://cko6xx27ymop3" path="res://Art/Characters/Ion CreangaTalkingRight.png" id="15_cd31w"]
+[ext_resource type="Script" path="res://Scenes/MovementFunctionality.gd" id="16_kr4jn"]
+[ext_resource type="Texture2D" uid="uid://c2g4083r25hk5" path="res://Art/Characters/Ion GhicaLeft.png" id="16_muk18"]
+[ext_resource type="Texture2D" uid="uid://cwyf1h42gls6o" path="res://Art/Characters/Ion GhicaRight.png" id="17_e4vvr"]
+[ext_resource type="Texture2D" uid="uid://bs5l01dd2ormr" path="res://Art/Characters/Ion GhicaTalkingLeft.png" id="18_wnq8s"]
+[ext_resource type="Texture2D" uid="uid://oolnuhqc0507" path="res://Art/Characters/Ion GhicaTalkingRight.png" id="19_vkjql"]
+[ext_resource type="Texture2D" uid="uid://b4ppfquvmseev" path="res://Art/Characters/neil armstrongLeft.png" id="28_iydam"]
+[ext_resource type="Texture2D" uid="uid://bhnkn2nbf6ts8" path="res://Art/Characters/neil armstrongRight.png" id="29_xu5ef"]
+[ext_resource type="Texture2D" uid="uid://bddt2rj21mcta" path="res://Art/Characters/neil armstrongTalkingLeft.png" id="30_s26rn"]
+[ext_resource type="Texture2D" uid="uid://cybmf8lmvrs6d" path="res://Art/Characters/neil armstrongTalkingRight.png" id="31_0cwno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3paj"]
+size = Vector2(32.6, 63.4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4exq"]
+atlas = ExtResource("5_xexko")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmdlv"]
+atlas = ExtResource("5_xexko")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbt6"]
+atlas = ExtResource("7_5lnru")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3ha"]
+atlas = ExtResource("7_5lnru")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcviu"]
+atlas = ExtResource("10_ijbq5")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpx33"]
+atlas = ExtResource("10_ijbq5")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anmxv"]
+atlas = ExtResource("11_8q4he")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo4cv"]
+atlas = ExtResource("11_8q4he")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnilr"]
+atlas = ExtResource("14_8077k")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byqm0"]
+atlas = ExtResource("14_8077k")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iex8r"]
+atlas = ExtResource("15_cd31w")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgsfc"]
+atlas = ExtResource("15_cd31w")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2so2d"]
+atlas = ExtResource("18_wnq8s")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aifai"]
+atlas = ExtResource("18_wnq8s")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhsv3"]
+atlas = ExtResource("19_vkjql")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ipi"]
+atlas = ExtResource("19_vkjql")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi24d"]
+atlas = ExtResource("10_t2y7b")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcr1e"]
+atlas = ExtResource("10_t2y7b")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnjip"]
+atlas = ExtResource("11_htxxd")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0pxi"]
+atlas = ExtResource("11_htxxd")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30gmb"]
+atlas = ExtResource("14_3vjn3")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajsd7"]
+atlas = ExtResource("14_3vjn3")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sta3"]
+atlas = ExtResource("15_6s8ul")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7n5e"]
+atlas = ExtResource("15_6s8ul")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2vf5"]
+atlas = ExtResource("30_s26rn")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjc7l"]
+atlas = ExtResource("30_s26rn")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gkjq"]
+atlas = ExtResource("31_0cwno")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waotx"]
+atlas = ExtResource("31_0cwno")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbeyp"]
+atlas = ExtResource("14_ulnfv")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh088"]
+atlas = ExtResource("14_ulnfv")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfyyy"]
+atlas = ExtResource("8_v0vnj")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em5mc"]
+atlas = ExtResource("8_v0vnj")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m2dp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4p5ge")
+}],
+"loop": true,
+"name": &"AlbertEinsteinLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lx4q4")
+}],
+"loop": true,
+"name": &"AlbertEinsteinRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4exq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rmdlv")
+}],
+"loop": true,
+"name": &"AlbertEinsteinTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpbt6")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8m3ha")
+}],
+"loop": true,
+"name": &"AlbertEinsteinTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fki5i")
+}],
+"loop": true,
+"name": &"BenjaminFranklinLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w6058")
+}],
+"loop": true,
+"name": &"BenjaminFranklinRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcviu")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rpx33")
+}],
+"loop": true,
+"name": &"BenjaminFranklinTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anmxv")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xo4cv")
+}],
+"loop": true,
+"name": &"BenjaminFranklinTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_lj2br")
+}],
+"loop": true,
+"name": &"IonCreangaLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_dvs8t")
+}],
+"loop": true,
+"name": &"IonCreangaRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnilr")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_byqm0")
+}],
+"loop": true,
+"name": &"IonCreangaTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iex8r")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_bgsfc")
+}],
+"loop": true,
+"name": &"IonCreangaTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_muk18")
+}],
+"loop": true,
+"name": &"IonGhicaLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_e4vvr")
+}],
+"loop": true,
+"name": &"IonGhicaRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2so2d")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_aifai")
+}],
+"loop": true,
+"name": &"IonGhicaTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhsv3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k8ipi")
+}],
+"loop": true,
+"name": &"IonGhicaTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_v6db4")
+}],
+"loop": true,
+"name": &"IsaacNewtonLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i3da5")
+}],
+"loop": true,
+"name": &"IsaacNewtonRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi24d")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xcr1e")
+}],
+"loop": true,
+"name": &"IsaacNewtonTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnjip")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k0pxi")
+}],
+"loop": true,
+"name": &"IsaacNewtonTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_vmfqp")
+}],
+"loop": true,
+"name": &"MihaiEminescuLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4gmu8")
+}],
+"loop": true,
+"name": &"MihaiEminescuRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30gmb")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ajsd7")
+}],
+"loop": true,
+"name": &"MihaiEminescuTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sta3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_t7n5e")
+}],
+"loop": true,
+"name": &"MihaiEminescuTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_iydam")
+}],
+"loop": true,
+"name": &"NeilArmstrongLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_xu5ef")
+}],
+"loop": true,
+"name": &"NeilArmstrongRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2vf5")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xjc7l")
+}],
+"loop": true,
+"name": &"NeilArmstrongTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gkjq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_waotx")
+}],
+"loop": true,
+"name": &"NeilArmstrongTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_yq76n")
+}],
+"loop": true,
+"name": &"WilliamShakespeareLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m1auk")
+}],
+"loop": true,
+"name": &"WilliamShakespeareRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbeyp")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_wh088")
+}],
+"loop": true,
+"name": &"WilliamShakespeareTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfyyy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_em5mc")
+}],
+"loop": true,
+"name": &"WilliamShakespeareTalkingRight",
+"speed": 5.0
+}]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_0ujig")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+input_pickable = true
+script = ExtResource("2_ob61g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.100001, 1.7)
+shape = SubResource("RectangleShape2D_s3paj")
+
+[node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+visible = false
+texture = ExtResource("3_t4dv4")
+
+[node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_0m2dp")
+animation = &"NeilArmstrongTalkingRight"
+
+[node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
+one_shot = true
+
+[node name="TalkingFor" type="Timer" parent="CharacterBody2D"]
+one_shot = true
+
+[node name="TurnDelay" type="Timer" parent="CharacterBody2D"]
+one_shot = true
+
+[node name="ExternalCharacterSettings" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Turns?" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -47.0
+offset_top = -259.0
+offset_right = 53.0
+offset_bottom = -228.0
+text = "Turns?"
+
+[node name="Turn Delay" type="TextEdit" parent="ExternalCharacterSettings/Turns?"]
+visible = false
+layout_mode = 0
+offset_left = 115.0
+offset_top = 6.0
+offset_right = 209.0
+offset_bottom = 43.0
+placeholder_text = "Turn Delay"
+
+[node name="LeftOrRight" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -74.0
+offset_top = -211.0
+offset_right = 73.0
+offset_bottom = -180.0
+text = "Looking Left?"
+
+[node name="CheckifTalks" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -59.0
+offset_top = -188.0
+offset_right = 59.0
+offset_bottom = -157.0
+text = "Will talk?"
+
+[node name="TalkAnimationDuration" type="TextEdit" parent="ExternalCharacterSettings/CheckifTalks"]
+visible = false
+layout_mode = 0
+offset_left = -148.0
+offset_top = 89.0
+offset_right = -13.0
+offset_bottom = 124.0
+placeholder_text = "Talking duration"
+
+[node name="TalkAnimationDelayTextEdit" type="TextEdit" parent="ExternalCharacterSettings/CheckifTalks"]
+visible = false
+layout_mode = 0
+offset_left = -126.0
+offset_top = 50.0
+offset_right = -13.0
+offset_bottom = 86.0
+placeholder_text = "Talking delay"
+
+[node name="WillMove" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -63.0
+offset_top = -236.0
+offset_right = 68.0
+offset_bottom = -205.0
+text = "Will move?"
+
+[node name="Movement Duration" type="TextEdit" parent="ExternalCharacterSettings/WillMove"]
+visible = false
+layout_mode = 0
+offset_left = -143.0
+offset_top = 45.0
+offset_right = -17.0
+offset_bottom = 76.0
+placeholder_text = "Move Duration"
+
+[node name="Movement Delay" type="TextEdit" parent="ExternalCharacterSettings/WillMove"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.55
+anchor_top = 0.419
+anchor_right = -0.55
+anchor_bottom = 0.419
+offset_left = -42.95
+offset_top = -3.989
+offset_right = 55.05
+offset_bottom = 27.011
+placeholder_text = "Move Delay"
+
+[node name="Movement Speed" type="TextEdit" parent="ExternalCharacterSettings/WillMove"]
+visible = false
+layout_mode = 0
+offset_left = -167.0
+offset_top = -28.0
+offset_right = -18.0
+offset_bottom = 6.0
+placeholder_text = "Movement Speed"
+
+[node name="MovementFunctionality" type="Node2D" parent="."]
+script = ExtResource("16_kr4jn")
+
+[connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
+[connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_exited"]
+[connection signal="timeout" from="CharacterBody2D/TalkStartTimer" to="CharacterBody2D" method="_on_talk_start_timer_timeout"]
+[connection signal="timeout" from="CharacterBody2D/TalkingFor" to="CharacterBody2D" method="_on_talking_for_timeout"]
+[connection signal="timeout" from="CharacterBody2D/TurnDelay" to="CharacterBody2D" method="_on_turn_delay_timeout"]
+[connection signal="toggled" from="ExternalCharacterSettings/Turns?" to="CharacterBody2D" method="_on_turns_toggled"]
+[connection signal="toggled" from="ExternalCharacterSettings/LeftOrRight" to="CharacterBody2D" method="_on_left_or_right_toggled"]
+[connection signal="toggled" from="ExternalCharacterSettings/CheckifTalks" to="." method="_on_checkif_talks_toggled"]
+[connection signal="text_changed" from="ExternalCharacterSettings/CheckifTalks/TalkAnimationDuration" to="." method="_on_talk_animation_duration_text_changed"]
+[connection signal="text_changed" from="ExternalCharacterSettings/CheckifTalks/TalkAnimationDelayTextEdit" to="." method="_on_talk_animation_delay_text_edit_text_changed"]
+[connection signal="toggled" from="ExternalCharacterSettings/WillMove" to="CharacterBody2D" method="_on_will_move_toggled"]

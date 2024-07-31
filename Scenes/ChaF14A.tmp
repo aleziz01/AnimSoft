@@ -1,0 +1,288 @@
+[gd_scene load_steps=31 format=3 uid="uid://dwu7dpjhnd45t"]
+
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
+[ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
+[ext_resource type="Script" path="res://Scripts/AnimationController.gd" id="2_ob61g"]
+[ext_resource type="Texture2D" uid="uid://bjwvviec38hfc" path="res://Art/GUI details/frame.png" id="3_t4dv4"]
+[ext_resource type="Texture2D" uid="uid://dohbhfyowycf6" path="res://Art/Characters/isaac newton.png" id="5_i3da5"]
+[ext_resource type="Texture2D" uid="uid://c5307vu5swrkc" path="res://Art/Characters/AlbertEinsteinRight.png" id="5_lx4q4"]
+[ext_resource type="Texture2D" uid="uid://bn6jm10jmqh6s" path="res://Art/Characters/Animation Spritesheets/albert einsteinTalkingAnimation.png" id="5_xexko"]
+[ext_resource type="Texture2D" uid="uid://bta8pdf7tdcc1" path="res://Art/Characters/albertEinsteinTalkingRight.png" id="7_5lnru"]
+[ext_resource type="Texture2D" uid="uid://o5vf1jry5cia" path="res://Art/Characters/william shakespeare.png" id="7_m1auk"]
+[ext_resource type="Texture2D" uid="uid://bx37vomj87ij2" path="res://Art/Characters/william shakespearetalking.png" id="8_v0vnj"]
+[ext_resource type="Texture2D" uid="uid://b4mqeq1pj33ta" path="res://Art/Characters/isaacNewtonLeft.png" id="8_v6db4"]
+[ext_resource type="Texture2D" uid="uid://xpivhcgu7rum" path="res://Art/Characters/isaacNewtonTalkingLeft.png" id="10_t2y7b"]
+[ext_resource type="Texture2D" uid="uid://bmygn4e3w6c5v" path="res://Art/Characters/IsaacnewtonRightTalkign.png" id="11_htxxd"]
+[ext_resource type="Texture2D" uid="uid://bfnvcsthi5ljg" path="res://Art/Characters/william shakespeare left.png" id="12_yq76n"]
+[ext_resource type="Texture2D" uid="uid://c6f8q40mnus71" path="res://Art/Characters/william shakespeare left talking.png" id="14_ulnfv"]
+[ext_resource type="Script" path="res://Scenes/MovementFunctionality.gd" id="16_kr4jn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3paj"]
+size = Vector2(28, 64.4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4exq"]
+atlas = ExtResource("5_xexko")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmdlv"]
+atlas = ExtResource("5_xexko")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpbt6"]
+atlas = ExtResource("7_5lnru")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3ha"]
+atlas = ExtResource("7_5lnru")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi24d"]
+atlas = ExtResource("10_t2y7b")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcr1e"]
+atlas = ExtResource("10_t2y7b")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnjip"]
+atlas = ExtResource("11_htxxd")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0pxi"]
+atlas = ExtResource("11_htxxd")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbeyp"]
+atlas = ExtResource("14_ulnfv")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh088"]
+atlas = ExtResource("14_ulnfv")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfyyy"]
+atlas = ExtResource("8_v0vnj")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em5mc"]
+atlas = ExtResource("8_v0vnj")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0m2dp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4p5ge")
+}],
+"loop": true,
+"name": &"AlbertEinsteinLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lx4q4")
+}],
+"loop": true,
+"name": &"AlbertEinsteinRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4exq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rmdlv")
+}],
+"loop": true,
+"name": &"AlbertEinsteinTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpbt6")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8m3ha")
+}],
+"loop": true,
+"name": &"AlbertEinsteinTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_v6db4")
+}],
+"loop": true,
+"name": &"IsaacNewtonLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i3da5")
+}],
+"loop": true,
+"name": &"IsaacNewtonRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi24d")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xcr1e")
+}],
+"loop": true,
+"name": &"IsaacNewtonTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnjip")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k0pxi")
+}],
+"loop": true,
+"name": &"IsaacNewtonTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_yq76n")
+}],
+"loop": true,
+"name": &"WilliamShakespeareLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m1auk")
+}],
+"loop": true,
+"name": &"WilliamShakespeareRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbeyp")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_wh088")
+}],
+"loop": true,
+"name": &"WilliamShakespeareTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfyyy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_em5mc")
+}],
+"loop": true,
+"name": &"WilliamShakespeareTalkingRight",
+"speed": 5.0
+}]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_0ujig")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+input_pickable = true
+script = ExtResource("2_ob61g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.4, 1.2)
+shape = SubResource("RectangleShape2D_s3paj")
+
+[node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+visible = false
+texture = ExtResource("3_t4dv4")
+
+[node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_0m2dp")
+animation = &"WilliamShakespeareLeft"
+
+[node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
+one_shot = true
+
+[node name="TalkingFor" type="Timer" parent="CharacterBody2D"]
+one_shot = true
+
+[node name="ExternalCharacterSettings" type="Node2D" parent="."]
+
+[node name="LeftOrRight" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -74.0
+offset_top = -211.0
+offset_right = 73.0
+offset_bottom = -180.0
+text = "Looking Left?"
+
+[node name="CheckifTalks" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -59.0
+offset_top = -188.0
+offset_right = 59.0
+offset_bottom = -157.0
+text = "Will talk?"
+
+[node name="TalkAnimationDuration" type="TextEdit" parent="ExternalCharacterSettings"]
+visible = false
+offset_left = -207.0
+offset_top = -99.0
+offset_right = -72.0
+offset_bottom = -64.0
+placeholder_text = "Talking duration"
+
+[node name="TalkAnimationDelayTextEdit" type="TextEdit" parent="ExternalCharacterSettings"]
+visible = false
+offset_left = -185.0
+offset_top = -138.0
+offset_right = -72.0
+offset_bottom = -102.0
+placeholder_text = "Talking delay"
+
+[node name="WillMove" type="CheckButton" parent="ExternalCharacterSettings"]
+offset_left = -63.0
+offset_top = -236.0
+offset_right = 68.0
+offset_bottom = -205.0
+text = "Will move?"
+
+[node name="TextEdit" type="TextEdit" parent="ExternalCharacterSettings/WillMove"]
+visible = false
+offset_left = -96.0
+offset_top = 45.0
+offset_right = -17.0
+offset_bottom = 76.0
+placeholder_text = "Duration"
+
+[node name="TextEdit2" type="TextEdit" parent="ExternalCharacterSettings/WillMove"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.55
+anchor_top = 0.419
+anchor_right = -0.55
+anchor_bottom = 0.419
+offset_left = -23.95
+offset_top = -3.989
+offset_right = 55.05
+offset_bottom = 27.011
+placeholder_text = "Delay"
+
+[node name="MovementFunctionality" type="Node2D" parent="."]
+script = ExtResource("16_kr4jn")
+
+[connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
+[connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_exited"]
+[connection signal="timeout" from="CharacterBody2D/TalkStartTimer" to="CharacterBody2D" method="_on_talk_start_timer_timeout"]
+[connection signal="timeout" from="CharacterBody2D/TalkingFor" to="CharacterBody2D" method="_on_talking_for_timeout"]
+[connection signal="toggled" from="ExternalCharacterSettings/LeftOrRight" to="CharacterBody2D" method="_on_left_or_right_toggled"]
+[connection signal="toggled" from="ExternalCharacterSettings/CheckifTalks" to="." method="_on_checkif_talks_toggled"]
+[connection signal="text_changed" from="ExternalCharacterSettings/TalkAnimationDuration" to="." method="_on_talk_animation_duration_text_changed"]
+[connection signal="text_changed" from="ExternalCharacterSettings/TalkAnimationDelayTextEdit" to="." method="_on_talk_animation_delay_text_edit_text_changed"]
+[connection signal="toggled" from="ExternalCharacterSettings/WillMove" to="CharacterBody2D" method="_on_will_move_toggled"]

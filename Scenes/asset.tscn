@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://chb01cgxrue8q"]
+
+[ext_resource type="Script" path="res://Scripts/Asset.gd" id="1_lokag"]
+[ext_resource type="Script" path="res://Scenes/CharacterBodyAsset.gd" id="2_xcbvf"]
+[ext_resource type="Texture2D" uid="uid://bjyipskipdu1t" path="res://Art/Assets/AssetFrame.png" id="3_i0kgd"]
+[ext_resource type="Texture2D" uid="uid://calwapxpp2fs0" path="res://Art/Assets/painting.png" id="4_8nuya"]
+[ext_resource type="Texture2D" uid="uid://dxocpotgysd06" path="res://Art/Assets/table.png" id="4_sf10l"]
+[ext_resource type="Texture2D" uid="uid://c1wi2dbeppph6" path="res://Art/Assets/painting2.png" id="5_7vf7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i3cw"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0nnc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8nuya")
+}],
+"loop": true,
+"name": &"Painting1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7vf7p")
+}],
+"loop": true,
+"name": &"Painting2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sf10l")
+}],
+"loop": true,
+"name": &"Table",
+"speed": 5.0
+}]
+
+[node name="Asset" type="Node2D"]
+script = ExtResource("1_lokag")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(6, 6)
+input_pickable = true
+script = ExtResource("2_xcbvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+z_index = 1
+shape = SubResource("RectangleShape2D_4i3cw")
+
+[node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+texture_filter = 1
+texture = ExtResource("3_i0kgd")
+
+[node name="Animations+Sprites" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i0nnc")
+animation = &"Painting2"
+
+[node name="PickableButtonController" type="Node2D" parent="."]
+z_index = 5
+
+[node name="InfrontOrBehind" type="CheckButton" parent="PickableButtonController"]
+offset_left = -55.0
+offset_top = -133.0
+offset_right = 55.0
+offset_bottom = -102.0
+text = "Infront?"
+
+[connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_exited"]
+[connection signal="toggled" from="PickableButtonController/InfrontOrBehind" to="CharacterBody2D" method="_on_infront_or_behind_toggled"]
