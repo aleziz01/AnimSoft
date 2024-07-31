@@ -118,6 +118,9 @@ func _on_ready_button_pressed():
 	$"..".hide()
 	animStarted=true
 	emit_signal("startAnimation")
+	if(float($AnimationDuration.text)!=0):
+		await get_tree().create_timer(float($AnimationDuration.text)).timeout
+		get_tree().quit()
 
 
 func _on_killswitch_pressed():
