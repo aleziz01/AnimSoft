@@ -13,6 +13,7 @@ var BenjaminFranklinText="Benjamin Franklin was a..."
 var IonCreangaText="Ion Creanga was a..."
 var IonGhicaText="Ion Ghica was a..."
 var NeilArmstrongText="Neil Armstrong was a..."
+var WiseJapaneseManText="This japanese man was a professor, but now he has chosen to live a long, peaceful life"
 
 var animStarted=false
 var CharacterDescriptions=[]
@@ -34,6 +35,7 @@ func _ready():
 	CharacterDescriptions.append(IonCreangaText)
 	CharacterDescriptions.append(IonGhicaText)
 	CharacterDescriptions.append(NeilArmstrongText)
+	CharacterDescriptions.append(WiseJapaneseManText)
 
 var fading=false
 func FadeInAndOut():
@@ -96,6 +98,12 @@ func _on_scene_chooser_item_selected(index):
 
 func _on_background_picker_item_selected(index):
 	Scenes[global.selectedSceneId].get_node("GUI/Background").texture=BackgroundTextures[index]
+	if(index==2):
+		Scenes[global.selectedSceneId].get_node("WorldBoundary").position=Vector2(126.225,-35.47)
+		Scenes[global.selectedSceneId].get_node("WorldBoundary").rotation_degrees=16
+	else:
+		Scenes[global.selectedSceneId].get_node("WorldBoundary").position=Vector2(0,0)
+		Scenes[global.selectedSceneId].get_node("WorldBoundary").rotation_degrees=0
 func _on_CharacterAdder_pressed(id):
 	var instance=CharacterNode.instantiate()
 	Scenes[global.selectedSceneId].get_node("Characters").add_child(instance)
@@ -129,6 +137,5 @@ func _on_killswitch_pressed():
 		global.storedCharacters.pop_back()
 		global.focus-=1
 
-
-
-
+func _on_exit_pressed():
+	get_tree().quit()

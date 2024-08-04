@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://qn864xktqajq"]
+[gd_scene load_steps=28 format=3 uid="uid://qn864xktqajq"]
 
 [ext_resource type="Texture2D" uid="uid://bcpwgdkguiqq8" path="res://Art/GUI details/ScenesButton.png" id="1_vaitn"]
 [ext_resource type="Texture2D" uid="uid://gnwws4kfntwc" path="res://Art/GUI details/backgrounds decal.png" id="2_l2i4w"]
@@ -18,11 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://c1wi2dbeppph6" path="res://Art/Assets/painting2.png" id="10_n8xoa"]
 [ext_resource type="Texture2D" uid="uid://dvlufmcplyg4s" path="res://Art/GUI details/kill.png" id="10_nyiqv"]
 [ext_resource type="Texture2D" uid="uid://o65fmpuegl8j" path="res://Art/Characters/MihaiEminescuRight.png" id="13_aq31n"]
+[ext_resource type="Texture2D" uid="uid://bsqvb6p4uqpb6" path="res://Art/Assets/apple.png" id="13_f7crs"]
 [ext_resource type="Texture2D" uid="uid://dxfsx2wk26w6x" path="res://Art/Characters/BenjaminFranklinRight.png" id="14_wsc0m"]
 [ext_resource type="Texture2D" uid="uid://buc0qmmjeyl3t" path="res://Art/Characters/Ion CreangaLeft.png" id="17_golnr"]
 [ext_resource type="Texture2D" uid="uid://c2g4083r25hk5" path="res://Art/Characters/Ion GhicaLeft.png" id="18_78i83"]
 [ext_resource type="Texture2D" uid="uid://b4ppfquvmseev" path="res://Art/Characters/neil armstrongLeft.png" id="19_trrm7"]
 [ext_resource type="Texture2D" uid="uid://c8h4717lqdc3v" path="res://Art/GUI details/ScenesAdderButton.png" id="20_5kmlp"]
+[ext_resource type="Texture2D" uid="uid://buqy8s7llj5j" path="res://Art/Characters/WiseJapaneseManRight.png" id="22_q1t0v"]
+[ext_resource type="Texture2D" uid="uid://gfwamjie1ujc" path="res://Art/GUI details/exitButton.png" id="25_ssbba"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5ffx"]
+normal = Vector2(-0.00172117, -0.999999)
+distance = -45.4113
 
 [node name="Main" type="Node2D"]
 
@@ -110,7 +117,7 @@ offset_right = 937.0
 offset_bottom = 93.0
 icon = ExtResource("7_4ex03")
 expand_icon = true
-item_count = 3
+item_count = 4
 popup/item_0/text = "Table"
 popup/item_0/icon = ExtResource("7_gu7qr")
 popup/item_0/id = 0
@@ -120,6 +127,9 @@ popup/item_1/id = 1
 popup/item_2/text = "Painting2"
 popup/item_2/icon = ExtResource("10_n8xoa")
 popup/item_2/id = 2
+popup/item_3/text = "Apple"
+popup/item_3/icon = ExtResource("13_f7crs")
+popup/item_3/id = 3
 
 [node name="CharacterAdder" type="MenuButton" parent="BackgroundElements/PickableButtonController"]
 texture_filter = 1
@@ -130,7 +140,7 @@ offset_right = 937.0
 offset_bottom = -79.0
 icon = ExtResource("6_pef5q")
 expand_icon = true
-item_count = 8
+item_count = 9
 popup/item_0/text = "Einstein"
 popup/item_0/icon = ExtResource("3_211by")
 popup/item_0/id = 0
@@ -155,6 +165,9 @@ popup/item_6/id = 6
 popup/item_7/text = "Neil Armstrong"
 popup/item_7/icon = ExtResource("19_trrm7")
 popup/item_7/id = 7
+popup/item_8/text = "Japanese Man"
+popup/item_8/icon = ExtResource("22_q1t0v")
+popup/item_8/id = 8
 
 [node name="SceneChooser" type="OptionButton" parent="BackgroundElements/PickableButtonController"]
 offset_left = 135.0
@@ -179,6 +192,15 @@ offset_right = 553.0
 offset_bottom = 487.0
 placeholder_text = "How long will it last?"
 
+[node name="Exit" type="TextureButton" parent="BackgroundElements/PickableButtonController"]
+texture_filter = 1
+offset_left = -519.0
+offset_top = 358.0
+offset_right = -459.0
+offset_bottom = 424.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("25_ssbba")
+
 [node name="Scenes" type="Node2D" parent="."]
 position = Vector2(-192, -108)
 scale = Vector2(0.8, 0.8)
@@ -196,8 +218,17 @@ z_index = 1
 
 [node name="Assets" type="Node2D" parent="Scenes/AnimationScene"]
 
+[node name="WorldBoundary" type="StaticBody2D" parent="Scenes/AnimationScene"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/AnimationScene/WorldBoundary"]
+scale = Vector2(10, 10)
+shape = SubResource("WorldBoundaryShape2D_d5ffx")
+
 [connection signal="pressed" from="BackgroundElements/PickableButtonController/KILLSWITCH" to="BackgroundElements/PickableButtonController" method="_on_killswitch_pressed"]
 [connection signal="pressed" from="BackgroundElements/PickableButtonController/readyButton" to="BackgroundElements/PickableButtonController" method="_on_ready_button_pressed"]
 [connection signal="item_selected" from="BackgroundElements/PickableButtonController/BackgroundPicker" to="BackgroundElements/PickableButtonController" method="_on_background_picker_item_selected"]
 [connection signal="item_selected" from="BackgroundElements/PickableButtonController/SceneChooser" to="BackgroundElements/PickableButtonController" method="_on_scene_chooser_item_selected"]
 [connection signal="pressed" from="BackgroundElements/PickableButtonController/AddNewScene" to="BackgroundElements/PickableButtonController" method="addScene"]
+[connection signal="pressed" from="BackgroundElements/PickableButtonController/Exit" to="BackgroundElements/PickableButtonController" method="_on_exit_pressed"]

@@ -20,6 +20,8 @@ func _ready():
 	CharacterNames.append("IonCreanga")
 	CharacterNames.append("IonGhica")
 	CharacterNames.append("NeilArmstrong")
+	CharacterNames.append("WiseJapaneseMan")
 	AssetNames.append("Table")
 	AssetNames.append("Painting1")
 	AssetNames.append("Painting2")
+	AssetNames.append("Apple")

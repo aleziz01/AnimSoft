@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwbmtsdnjwbed"]
+[gd_scene load_steps=3 format=3 uid="uid://dwbmtsdnjwbed"]
 
 [ext_resource type="Texture2D" uid="uid://dybnnllexoq5w" path="res://Art/Backgrounds/stage.png" id="1_t0b6s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hcspc"]
+normal = Vector2(-0.00172117, -0.999999)
+distance = -45.4113
 
 [node name="AnimationScene" type="Node2D"]
 
@@ -14,3 +18,11 @@ texture = ExtResource("1_t0b6s")
 z_index = 1
 
 [node name="Assets" type="Node2D" parent="."]
+
+[node name="WorldBoundary" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
+scale = Vector2(10, 10)
+shape = SubResource("WorldBoundaryShape2D_hcspc")
