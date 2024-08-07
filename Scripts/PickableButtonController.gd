@@ -14,6 +14,8 @@ var IonCreangaText="Ion Creanga was a..."
 var IonGhicaText="Ion Ghica was a..."
 var NeilArmstrongText="Neil Armstrong was a..."
 var WiseJapaneseManText="This japanese man was a professor, but now he has chosen to live a long, peaceful life"
+var SmartFemaleTeacherText="This teacher is really chill!"
+var AngryFemaleTeacherText="This teacher is not really chill at all..."
 
 var animStarted=false
 var CharacterDescriptions=[]
@@ -36,6 +38,8 @@ func _ready():
 	CharacterDescriptions.append(IonGhicaText)
 	CharacterDescriptions.append(NeilArmstrongText)
 	CharacterDescriptions.append(WiseJapaneseManText)
+	CharacterDescriptions.append(SmartFemaleTeacherText)
+	CharacterDescriptions.append(AngryFemaleTeacherText)
 
 var fading=false
 func FadeInAndOut():

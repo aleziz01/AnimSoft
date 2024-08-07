@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dwu7dpjhnd45t"]
+[gd_scene load_steps=106 format=3 uid="uid://dwu7dpjhnd45t"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
 [ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
@@ -9,11 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://bn6jm10jmqh6s" path="res://Art/Characters/Animation Spritesheets/albert einsteinTalkingAnimation.png" id="5_xexko"]
 [ext_resource type="Texture2D" uid="uid://bta8pdf7tdcc1" path="res://Art/Characters/albertEinsteinTalkingRight.png" id="7_5lnru"]
 [ext_resource type="Texture2D" uid="uid://o5vf1jry5cia" path="res://Art/Characters/william shakespeare.png" id="7_m1auk"]
+[ext_resource type="Texture2D" uid="uid://ci1sid5st5bnq" path="res://Art/Characters/AngryFemaleTeacherLeft.png" id="7_qyhw5"]
 [ext_resource type="Texture2D" uid="uid://cjjccor1wf8as" path="res://Art/Characters/BenjaminFranklinLeft.png" id="8_fki5i"]
+[ext_resource type="Texture2D" uid="uid://duh5ky3fs74vt" path="res://Art/Characters/AngryFemaleTeacherRight.png" id="8_rqv6k"]
 [ext_resource type="Texture2D" uid="uid://bx37vomj87ij2" path="res://Art/Characters/william shakespearetalking.png" id="8_v0vnj"]
 [ext_resource type="Texture2D" uid="uid://b4mqeq1pj33ta" path="res://Art/Characters/isaacNewtonLeft.png" id="8_v6db4"]
+[ext_resource type="Texture2D" uid="uid://b0tm1urrhvtcg" path="res://Art/Characters/AngryFemaleTeacherTalkingLeft.png" id="9_v44rv"]
 [ext_resource type="Texture2D" uid="uid://dxfsx2wk26w6x" path="res://Art/Characters/BenjaminFranklinRight.png" id="9_w6058"]
 [ext_resource type="Texture2D" uid="uid://cwk87qof8eu2p" path="res://Art/Characters/BenjaminFranklinTalkingLeft.png" id="10_ijbq5"]
+[ext_resource type="Texture2D" uid="uid://dilk0dl12fo3w" path="res://Art/Characters/AngryFemaleTeacherTalkingRight.png" id="10_oqlsm"]
 [ext_resource type="Texture2D" uid="uid://xpivhcgu7rum" path="res://Art/Characters/isaacNewtonTalkingLeft.png" id="10_t2y7b"]
 [ext_resource type="Texture2D" uid="uid://cqww1u4vmpxec" path="res://Art/Characters/BenjaminFranklinTalkingRight.png" id="11_8q4he"]
 [ext_resource type="Texture2D" uid="uid://bmygn4e3w6c5v" path="res://Art/Characters/IsaacnewtonRightTalkign.png" id="11_htxxd"]
@@ -36,10 +40,15 @@
 [ext_resource type="Texture2D" uid="uid://bhnkn2nbf6ts8" path="res://Art/Characters/neil armstrongRight.png" id="29_xu5ef"]
 [ext_resource type="Texture2D" uid="uid://bddt2rj21mcta" path="res://Art/Characters/neil armstrongTalkingLeft.png" id="30_s26rn"]
 [ext_resource type="Texture2D" uid="uid://cybmf8lmvrs6d" path="res://Art/Characters/neil armstrongTalkingRight.png" id="31_0cwno"]
+[ext_resource type="Texture2D" uid="uid://b051p0ittg0fg" path="res://Art/Characters/SmartFemaleTeacherLeft.png" id="35_g0s38"]
+[ext_resource type="Texture2D" uid="uid://bkerd3qn2sckx" path="res://Art/Characters/SmartFemaleTeacherRight.png" id="36_6f2v4"]
 [ext_resource type="Texture2D" uid="uid://onj158pfnya0" path="res://Art/Characters/WiseJapaneseManLeft.png" id="36_wsemh"]
 [ext_resource type="Texture2D" uid="uid://buqy8s7llj5j" path="res://Art/Characters/WiseJapaneseManRight.png" id="37_3ehp1"]
+[ext_resource type="Texture2D" uid="uid://bhxbnnjckes76" path="res://Art/Characters/SmartFemaleTeacherLeftTalking.png" id="37_vfh8f"]
 [ext_resource type="Texture2D" uid="uid://bgypfuei8lpvh" path="res://Art/Characters/WiseJapaneseManTalkingLeft.png" id="38_hqug2"]
+[ext_resource type="Texture2D" uid="uid://j4ffvy1d8bge" path="res://Art/Characters/SmartFemaleTeacherRightTalking.png" id="38_qp3ow"]
 [ext_resource type="Texture2D" uid="uid://btrlrdvcesml3" path="res://Art/Characters/WiseJapaneseManTalkingRight.png" id="39_eka2x"]
+[ext_resource type="Texture2D" uid="uid://b1cxk71nqyc75" path="res://Art/Characters/MovementSkateboard.png" id="49_i5gqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4exq"]
 atlas = ExtResource("5_xexko")
@@ -55,6 +64,22 @@ region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8m3ha"]
 atlas = ExtResource("7_5lnru")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_askpk"]
+atlas = ExtResource("9_v44rv")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68w5v"]
+atlas = ExtResource("9_v44rv")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1thou"]
+atlas = ExtResource("10_oqlsm")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyia1"]
+atlas = ExtResource("10_oqlsm")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcviu"]
@@ -153,6 +178,22 @@ region = Rect2(0, 0, 32, 64)
 atlas = ExtResource("31_0cwno")
 region = Rect2(32, 0, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_766q3"]
+atlas = ExtResource("37_vfh8f")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alm0s"]
+atlas = ExtResource("37_vfh8f")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f66r7"]
+atlas = ExtResource("38_qp3ow")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2rlq"]
+atlas = ExtResource("38_qp3ow")
+region = Rect2(32, 0, 32, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbeyp"]
 atlas = ExtResource("14_ulnfv")
 region = Rect2(0, 0, 32, 64)
@@ -223,6 +264,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"AlbertEinsteinTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qyhw5")
+}],
+"loop": true,
+"name": &"AngryFemaleTeacherLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_rqv6k")
+}],
+"loop": true,
+"name": &"AngryFemaleTeacherRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_askpk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_68w5v")
+}],
+"loop": true,
+"name": &"AngryFemaleTeacherTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1thou")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_tyia1")
+}],
+"loop": true,
+"name": &"AngryFemaleTeacherTalkingRight",
 "speed": 5.0
 }, {
 "frames": [{
@@ -455,6 +534,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("35_g0s38")
+}],
+"loop": true,
+"name": &"SmartFemaleTeacherLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_6f2v4")
+}],
+"loop": true,
+"name": &"SmartFemaleTeacherRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_766q3")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_alm0s")
+}],
+"loop": true,
+"name": &"SmartFemaleTeacherTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f66r7")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_c2rlq")
+}],
+"loop": true,
+"name": &"SmartFemaleTeacherTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("12_yq76n")
 }],
 "loop": true,
@@ -532,9 +649,86 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvkys"]
 radius = 15.9
-height = 41.7
+height = 62.8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnel2"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(0, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmkjg"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(36, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ay81"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(72, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj3x7"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(108, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrogl"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(144, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln66b"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(180, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_be4ls"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(216, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nokea"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(252, 0, 36, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i07i3"]
+atlas = ExtResource("49_i5gqm")
+region = Rect2(0, 0, 36, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r02go"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnel2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmkjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ay81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj3x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrogl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln66b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_be4ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nokea")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i07i3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Character" type="Node2D"]
+position = Vector2(0, 1)
 script = ExtResource("1_0ujig")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -547,7 +741,7 @@ script = ExtResource("2_ob61g")
 
 [node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_0m2dp")
-animation = &"NeilArmstrongLeft"
+animation = &"AlbertEinsteinTalkingRight"
 
 [node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
 one_shot = true
@@ -559,11 +753,12 @@ one_shot = true
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.1, -6.65)
+position = Vector2(1.57772e-30, 6)
 shape = SubResource("CapsuleShape2D_fvkys")
 
 [node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
 visible = false
+position = Vector2(0, -5)
 texture = ExtResource("3_t4dv4")
 
 [node name="ExternalCharacterSettings" type="Node2D" parent="."]
@@ -658,6 +853,15 @@ placeholder_text = "Movement Speed"
 
 [node name="MovementFunctionality" type="Node2D" parent="."]
 script = ExtResource("16_kr4jn")
+
+[node name="MOVEMENTSKATEBOARDYEAH" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 159)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_r02go")
+animation = &"Moving"
+frame_progress = 0.0889031
 
 [connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
 [connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]

@@ -72,6 +72,15 @@ func _on_talk_animation_duration_text_changed():
 	$CharacterBody2D/TalkingFor.wait_time=int($ExternalCharacterSettings/CheckifTalks/TalkAnimationDuration.text)
 
 var animationAlreadyStarted=false
+
+func ChangeYposition():
+	$CharacterBody2D.position.y-=5
+	while(moving):
+		await get_tree().create_timer(0.5).timeout
+		$CharacterBody2D.position.y-=5
+		await get_tree().create_timer(0.5).timeout
+		$CharacterBody2D.position.y+=5
+
 func animationStart():
 	if(SceneId==global.selectedSceneId and animationAlreadyStarted==false):
 		animationAlreadyStarted=true
@@ -90,5 +99,10 @@ func animationStart():
 				dir=Vector2(1,0)
 			speed=float($"ExternalCharacterSettings/WillMove/Movement Speed".text)
 			moving=true
+			ChangeYposition()
+			$MOVEMENTSKATEBOARDYEAH.show()
+			$MOVEMENTSKATEBOARDYEAH.play("Moving")
 			await get_tree().create_timer(int($"ExternalCharacterSettings/WillMove/Movement Duration".text)).timeout
+			$MOVEMENTSKATEBOARDYEAH.hide()
+			$CharacterBody2D.position.y=0
 			moving=false
