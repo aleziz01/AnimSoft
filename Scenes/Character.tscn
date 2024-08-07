@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dwu7dpjhnd45t"]
+[gd_scene load_steps=114 format=3 uid="uid://dwu7dpjhnd45t"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
 [ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
@@ -40,12 +40,16 @@
 [ext_resource type="Texture2D" uid="uid://bhnkn2nbf6ts8" path="res://Art/Characters/neil armstrongRight.png" id="29_xu5ef"]
 [ext_resource type="Texture2D" uid="uid://bddt2rj21mcta" path="res://Art/Characters/neil armstrongTalkingLeft.png" id="30_s26rn"]
 [ext_resource type="Texture2D" uid="uid://cybmf8lmvrs6d" path="res://Art/Characters/neil armstrongTalkingRight.png" id="31_0cwno"]
+[ext_resource type="Texture2D" uid="uid://du0fj5q6hx3mc" path="res://Art/Characters/scientistLeft.png" id="35_ad00d"]
 [ext_resource type="Texture2D" uid="uid://b051p0ittg0fg" path="res://Art/Characters/SmartFemaleTeacherLeft.png" id="35_g0s38"]
 [ext_resource type="Texture2D" uid="uid://bkerd3qn2sckx" path="res://Art/Characters/SmartFemaleTeacherRight.png" id="36_6f2v4"]
+[ext_resource type="Texture2D" uid="uid://w82lj1qcgxdr" path="res://Art/Characters/scientistRight.png" id="36_mv37l"]
 [ext_resource type="Texture2D" uid="uid://onj158pfnya0" path="res://Art/Characters/WiseJapaneseManLeft.png" id="36_wsemh"]
 [ext_resource type="Texture2D" uid="uid://buqy8s7llj5j" path="res://Art/Characters/WiseJapaneseManRight.png" id="37_3ehp1"]
+[ext_resource type="Texture2D" uid="uid://ueoani55rab5" path="res://Art/Characters/scientistTalkingLeft.png" id="37_n8hw0"]
 [ext_resource type="Texture2D" uid="uid://bhxbnnjckes76" path="res://Art/Characters/SmartFemaleTeacherLeftTalking.png" id="37_vfh8f"]
 [ext_resource type="Texture2D" uid="uid://bgypfuei8lpvh" path="res://Art/Characters/WiseJapaneseManTalkingLeft.png" id="38_hqug2"]
+[ext_resource type="Texture2D" uid="uid://d1bh0qeyjfoci" path="res://Art/Characters/scientistTalkingRight.png" id="38_jyhe1"]
 [ext_resource type="Texture2D" uid="uid://j4ffvy1d8bge" path="res://Art/Characters/SmartFemaleTeacherRightTalking.png" id="38_qp3ow"]
 [ext_resource type="Texture2D" uid="uid://btrlrdvcesml3" path="res://Art/Characters/WiseJapaneseManTalkingRight.png" id="39_eka2x"]
 [ext_resource type="Texture2D" uid="uid://b1cxk71nqyc75" path="res://Art/Characters/MovementSkateboard.png" id="49_i5gqm"]
@@ -176,6 +180,22 @@ region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waotx"]
 atlas = ExtResource("31_0cwno")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vu8b"]
+atlas = ExtResource("37_n8hw0")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52qob"]
+atlas = ExtResource("37_n8hw0")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh52u"]
+atlas = ExtResource("38_jyhe1")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5iqi"]
+atlas = ExtResource("38_jyhe1")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_766q3"]
@@ -534,6 +554,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("35_ad00d")
+}],
+"loop": true,
+"name": &"ScientistLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_mv37l")
+}],
+"loop": true,
+"name": &"ScientistRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vu8b")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_52qob")
+}],
+"loop": true,
+"name": &"ScientistTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh52u")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_t5iqi")
+}],
+"loop": true,
+"name": &"ScientistTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("35_g0s38")
 }],
 "loop": true,
@@ -741,7 +799,7 @@ script = ExtResource("2_ob61g")
 
 [node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_0m2dp")
-animation = &"AlbertEinsteinTalkingRight"
+animation = &"ScientistTalkingRight"
 
 [node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
 one_shot = true
@@ -860,8 +918,7 @@ texture_filter = 1
 position = Vector2(0, 159)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_r02go")
-animation = &"Moving"
-frame_progress = 0.0889031
+frame_progress = 0.0247506
 
 [connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
 [connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]

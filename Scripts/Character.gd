@@ -83,6 +83,7 @@ func ChangeYposition():
 
 func animationStart():
 	if(SceneId==global.selectedSceneId and animationAlreadyStarted==false):
+		$CharacterBody2D/CollisionShape2D.disabled=false
 		animationAlreadyStarted=true
 		if($"ExternalCharacterSettings/Turns?/Turn Delay".visible==true):
 			$CharacterBody2D/TurnDelay.wait_time=int($"ExternalCharacterSettings/Turns?/Turn Delay".text)
@@ -106,3 +107,5 @@ func animationStart():
 			$MOVEMENTSKATEBOARDYEAH.hide()
 			$CharacterBody2D.position.y=0
 			moving=false
+	elif(SceneId!=global.selectedSceneId):
+		$CharacterBody2D/CollisionShape2D.disabled=true

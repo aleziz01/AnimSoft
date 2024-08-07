@@ -16,6 +16,7 @@ var NeilArmstrongText="Neil Armstrong was a..."
 var WiseJapaneseManText="This japanese man was a professor, but now he has chosen to live a long, peaceful life"
 var SmartFemaleTeacherText="This teacher is really chill!"
 var AngryFemaleTeacherText="This teacher is not really chill at all..."
+var ScientistText="Science guy!!!"
 
 var animStarted=false
 var CharacterDescriptions=[]
@@ -40,6 +41,7 @@ func _ready():
 	CharacterDescriptions.append(WiseJapaneseManText)
 	CharacterDescriptions.append(SmartFemaleTeacherText)
 	CharacterDescriptions.append(AngryFemaleTeacherText)
+	CharacterDescriptions.append(ScientistText)
 
 var fading=false
 func FadeInAndOut():
@@ -84,15 +86,18 @@ func addScene():
 		$"../../Scenes".add_child(instance)
 		HideScenes()
 		Scenes[global.selectedSceneId].show()
+		Scenes[global.selectedSceneId].get_node("WorldBoundary/CollisionShape2D").disabled=false
 		
 
 
 func HideScenes():
 	for i in Scenes.size():
 		Scenes[i].hide()
+		Scenes[i].get_node("WorldBoundary/CollisionShape2D").disabled=true
 
 func _on_scene_chooser_item_selected(index):
 	HideScenes()
+	Scenes[index].get_node("WorldBoundary/CollisionShape2D").disabled=false
 	Scenes[index].show()
 	for i in BackgroundTextures.size():
 		if(Scenes[index].get_node("GUI/Background").texture==BackgroundTextures[i]):
@@ -120,7 +125,7 @@ func _on_AssetAdder_pressed(id):
 	Scenes[global.selectedSceneId].get_node("Assets").add_child(instance)
 	self.connect("transferTypeOfAsset",instance._on_pickable_button_controller_transfer_type_of_asset)
 	self.connect("startAnimation",instance.animationStart)
-	emit_signal("transferTypeOfAsset",id)
+	emit_signal("transferTypeOfAsset",id,global.selectedSceneId)
 
 func _on_ready_button_pressed():
 	global.focus=-1

@@ -23,6 +23,7 @@ func _ready():
 	CharacterNames.append("WiseJapaneseMan")
 	CharacterNames.append("SmartFemaleTeacher")
 	CharacterNames.append("AngryFemaleTeacher")
+	CharacterNames.append("Scientist")
 	AssetNames.append("Table")
 	AssetNames.append("Painting1")
 	AssetNames.append("Painting2")

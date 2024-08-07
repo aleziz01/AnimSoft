@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dybnnllexoq5w" path="res://Art/Backgrounds/stage.png" id="1_t0b6s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hcspc"]
-normal = Vector2(-0.00172117, -0.999999)
 distance = -45.4113
 
 [node name="AnimationScene" type="Node2D"]

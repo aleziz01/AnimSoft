@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://qn864xktqajq"]
+[gd_scene load_steps=31 format=3 uid="uid://qn864xktqajq"]
 
 [ext_resource type="Texture2D" uid="uid://bcpwgdkguiqq8" path="res://Art/GUI details/ScenesButton.png" id="1_vaitn"]
 [ext_resource type="Texture2D" uid="uid://gnwws4kfntwc" path="res://Art/GUI details/backgrounds decal.png" id="2_l2i4w"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b051p0ittg0fg" path="res://Art/Characters/SmartFemaleTeacherLeft.png" id="24_fqpxf"]
 [ext_resource type="Texture2D" uid="uid://ci1sid5st5bnq" path="res://Art/Characters/AngryFemaleTeacherLeft.png" id="25_khjct"]
 [ext_resource type="Texture2D" uid="uid://gfwamjie1ujc" path="res://Art/GUI details/exitButton.png" id="25_ssbba"]
+[ext_resource type="Texture2D" uid="uid://du0fj5q6hx3mc" path="res://Art/Characters/scientistLeft.png" id="26_6jm7f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5ffx"]
 normal = Vector2(-0.00172117, -0.999999)
@@ -142,7 +143,7 @@ offset_right = 936.0
 offset_bottom = -355.0
 icon = ExtResource("6_pef5q")
 expand_icon = true
-item_count = 11
+item_count = 12
 popup/item_0/text = "Einstein"
 popup/item_0/icon = ExtResource("3_211by")
 popup/item_0/id = 0
@@ -176,6 +177,9 @@ popup/item_9/id = 9
 popup/item_10/text = "Angry Teacher"
 popup/item_10/icon = ExtResource("25_khjct")
 popup/item_10/id = 10
+popup/item_11/text = "Scientist"
+popup/item_11/icon = ExtResource("26_6jm7f")
+popup/item_11/id = 11
 
 [node name="SceneChooser" type="OptionButton" parent="BackgroundElements/PickableButtonController"]
 offset_left = 135.0

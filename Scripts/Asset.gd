@@ -7,10 +7,11 @@ var AnimationStarted=false
 var charId=null
 var Name
 var speed=0
+var SceneId=null
 
-
-func _on_pickable_button_controller_transfer_type_of_asset(id):
+func _on_pickable_button_controller_transfer_type_of_asset(id,sceneid):
 	if(ok==true):
+		SceneId=sceneid
 		charId=global.storedAssets.size()
 		global.storedAssets.append($".")
 		$CharacterBody2D.spritename=global.AssetNames[id]
@@ -49,14 +50,15 @@ func _on_character_body_2d_mouse_exited():
 	clickable=false
 
 func animationStart():
-	AnimationStarted=true
-	$PickableButtonController.hide()
-	if($PickableButtonController/Falls.button_pressed==true):
-		await get_tree().create_timer(int($PickableButtonController/Falls/Delay.text)).timeout
-		if($"PickableButtonController/Falls/WhoDoesItFallOn?".get_selected_id()==0):
-			$CharacterBody2D.set_collision_mask_value(3,true)
-		while(speed<500):
-			await get_tree().create_timer(0.1).timeout
-			speed+=30
-	else:
-		speed=0
+	if(SceneId==global.selectedSceneId):
+		$PickableButtonController.hide()
+		if($PickableButtonController/Falls.button_pressed==true):
+			await get_tree().create_timer(int($PickableButtonController/Falls/Delay.text)).timeout
+			if($"PickableButtonController/Falls/WhoDoesItFallOn?".get_selected_id()==0):
+				$CharacterBody2D.set_collision_mask_value(3,true)
+			AnimationStarted=true
+			while(speed<500):
+				await get_tree().create_timer(0.1).timeout
+				speed+=30
+		else:
+			speed=0
