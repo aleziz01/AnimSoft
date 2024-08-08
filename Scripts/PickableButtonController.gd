@@ -17,6 +17,7 @@ var WiseJapaneseManText="This japanese man was a professor, but now he has chose
 var SmartFemaleTeacherText="This teacher is really chill!"
 var AngryFemaleTeacherText="This teacher is not really chill at all..."
 var ScientistText="Science guy!!!"
+var MugurIsarescuText="Mugur Isarescu is a..."
 
 var animStarted=false
 var CharacterDescriptions=[]
@@ -27,6 +28,7 @@ func _ready():
 	Scenes.append($"../../Scenes/AnimationScene")
 	$AssetAdder.get_popup().connect("id_pressed", _on_AssetAdder_pressed)
 	$CharacterAdder.get_popup().connect("id_pressed", _on_CharacterAdder_pressed)
+	$CharacterAdderPage2.get_popup().connect("id_pressed",_on_CharacterAdder_pressed)
 	BackgroundTextures.append(preload("res://Art/Backgrounds/BackgroundRandom.png"))
 	BackgroundTextures.append(preload("res://Art/Backgrounds/stage.png"))
 	BackgroundTextures.append(preload("res://Art/Backgrounds/isaac newton's tree.png"))
@@ -42,6 +44,7 @@ func _ready():
 	CharacterDescriptions.append(SmartFemaleTeacherText)
 	CharacterDescriptions.append(AngryFemaleTeacherText)
 	CharacterDescriptions.append(ScientistText)
+	CharacterDescriptions.append(MugurIsarescuText)
 
 var fading=false
 func FadeInAndOut():
@@ -113,7 +116,11 @@ func _on_background_picker_item_selected(index):
 	else:
 		Scenes[global.selectedSceneId].get_node("WorldBoundary").position=Vector2(0,0)
 		Scenes[global.selectedSceneId].get_node("WorldBoundary").rotation_degrees=0
+
 func _on_CharacterAdder_pressed(id):
+	#simple solution to the having too many characters in one menubutton problem
+	if($CharacterAdderPage2.visible==true):
+		id+=13 #13 because despite the max index being 12 the count starts at 0 so theres 13 in total
 	var instance=CharacterNode.instantiate()
 	Scenes[global.selectedSceneId].get_node("Characters").add_child(instance)
 	self.connect("transferTypeOfCharacter",instance._on_pickable_button_controller_transfer_type_of_character)
@@ -148,3 +155,12 @@ func _on_killswitch_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_page_button_item_selected(index):
+	if(index==1):
+		$CharacterAdder.hide()
+		$CharacterAdderPage2.show()
+	else:
+		$CharacterAdderPage2.hide()
+		$CharacterAdder.show()

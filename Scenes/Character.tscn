@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://dwu7dpjhnd45t"]
+[gd_scene load_steps=122 format=3 uid="uid://dwu7dpjhnd45t"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
 [ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
@@ -40,6 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://bhnkn2nbf6ts8" path="res://Art/Characters/neil armstrongRight.png" id="29_xu5ef"]
 [ext_resource type="Texture2D" uid="uid://bddt2rj21mcta" path="res://Art/Characters/neil armstrongTalkingLeft.png" id="30_s26rn"]
 [ext_resource type="Texture2D" uid="uid://cybmf8lmvrs6d" path="res://Art/Characters/neil armstrongTalkingRight.png" id="31_0cwno"]
+[ext_resource type="Texture2D" uid="uid://xobgdcvlwetf" path="res://Art/Characters/MuguriIsarescuLeft.png" id="31_aku7j"]
+[ext_resource type="Texture2D" uid="uid://bpfiwkiwl2y7q" path="res://Art/Characters/MuguriIsarescuRight.png" id="32_5jr6g"]
+[ext_resource type="Texture2D" uid="uid://dv72bxu3cpd1v" path="res://Art/Characters/MuguriIsarescuTalkingLeft.png" id="33_oac5j"]
+[ext_resource type="Texture2D" uid="uid://1hm8t3xlndch" path="res://Art/Characters/MuguriIsarescuTalkingRight.png" id="34_unoqo"]
 [ext_resource type="Texture2D" uid="uid://du0fj5q6hx3mc" path="res://Art/Characters/scientistLeft.png" id="35_ad00d"]
 [ext_resource type="Texture2D" uid="uid://b051p0ittg0fg" path="res://Art/Characters/SmartFemaleTeacherLeft.png" id="35_g0s38"]
 [ext_resource type="Texture2D" uid="uid://bkerd3qn2sckx" path="res://Art/Characters/SmartFemaleTeacherRight.png" id="36_6f2v4"]
@@ -164,6 +168,22 @@ region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7n5e"]
 atlas = ExtResource("15_6s8ul")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amknk"]
+atlas = ExtResource("33_oac5j")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfdoq"]
+atlas = ExtResource("33_oac5j")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvmw8"]
+atlas = ExtResource("34_unoqo")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31580"]
+atlas = ExtResource("34_unoqo")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2vf5"]
@@ -516,6 +536,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("31_aku7j")
+}],
+"loop": true,
+"name": &"MugurIsarescuLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_5jr6g")
+}],
+"loop": true,
+"name": &"MugurIsarescuRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amknk")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rfdoq")
+}],
+"loop": true,
+"name": &"MugurIsarescuTalkingLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvmw8")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_31580")
+}],
+"loop": true,
+"name": &"MugurIsarescuTalkingRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("28_iydam")
 }],
 "loop": true,
@@ -799,7 +857,7 @@ script = ExtResource("2_ob61g")
 
 [node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_0m2dp")
-animation = &"ScientistTalkingRight"
+animation = &"MugurIsarescuLeft"
 
 [node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
 one_shot = true
