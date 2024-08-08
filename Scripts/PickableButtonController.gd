@@ -1,26 +1,26 @@
 extends Node2D
 
-var BackgroundTextures=[]
-var Scenes=[]
-var CharacterNode=preload("res://Scenes/Character.tscn")
-var AssetNode=preload("res://Scenes/asset.tscn")
+var BackgroundTextures:=[]
+var Scenes:=[]
+var CharacterNode:=preload("res://Scenes/Character.tscn")
+var AssetNode:=preload("res://Scenes/asset.tscn")
 #descriptions
-var AlbertEinsteinText="Albert Einstein was a German theoretical physicist who is widely held as one of the most influential scientists. He is best known for his theory of relativity and his contributions to quantum mechanics. He received the 1921 Nobel Prize in physics, mainly for his discovery of the law of the photoelectric effect. His intellectual achievements and originaility have made the word Einstein synonymous to genius."
-var IsaacNewtonText="Isaac Newton was a mathematician, physicist, astronomer, alchemist, theologian, and author who was described as a natural philosopher. He was a key figure in the Scientific revolution and the Enlightenment that followed it. His book Philosophiæ Naturalis Principia Mathematica, first published in 1687, established classical mechanics. Newton also made contributions to optics, and shares credit with German mathematician Gottfried Wilhelm Leibniz for formulating infinitesmal calculus."
-var WilliamShakespeareText="William Shakespeare was a"
-var MihaiEminescuText="Mihai Eminescu was a..."
-var BenjaminFranklinText="Benjamin Franklin was a..."
-var IonCreangaText="Ion Creanga was a..."
-var IonGhicaText="Ion Ghica was a..."
-var NeilArmstrongText="Neil Armstrong was a..."
-var WiseJapaneseManText="This japanese man was a professor, but now he has chosen to live a long, peaceful life"
-var SmartFemaleTeacherText="This teacher is really chill!"
-var AngryFemaleTeacherText="This teacher is not really chill at all..."
-var ScientistText="Science guy!!!"
-var MugurIsarescuText="Mugur Isarescu is a..."
+var AlbertEinsteinText:="Albert Einstein was a German theoretical physicist who is widely held as one of the most influential scientists. He is best known for his theory of relativity and his contributions to quantum mechanics. He received the 1921 Nobel Prize in physics, mainly for his discovery of the law of the photoelectric effect. His intellectual achievements and originaility have made the word Einstein synonymous to genius."
+var IsaacNewtonText:="Isaac Newton was a mathematician, physicist, astronomer, alchemist, theologian, and author who was described as a natural philosopher. He was a key figure in the Scientific revolution and the Enlightenment that followed it. His book Philosophiæ Naturalis Principia Mathematica, first published in 1687, established classical mechanics. Newton also made contributions to optics, and shares credit with German mathematician Gottfried Wilhelm Leibniz for formulating infinitesmal calculus."
+var WilliamShakespeareText:="William Shakespeare was a"
+var MihaiEminescuText:="Mihai Eminescu was a..."
+var BenjaminFranklinText:="Benjamin Franklin was a..."
+var IonCreangaText:="Ion Creanga was a..."
+var IonGhicaText:="Ion Ghica was a..."
+var NeilArmstrongText:="Neil Armstrong was a..."
+var WiseJapaneseManText:="This japanese man was a professor, but now he has chosen to live a long, peaceful life"
+var SmartFemaleTeacherText:="This teacher is really chill!"
+var AngryFemaleTeacherText:="This teacher is not really chill at all..."
+var ScientistText:="Science guy!!!"
+var MugurIsarescuText:="Mugur Isarescu is a..."
 
-var animStarted=false
-var CharacterDescriptions=[]
+var animStarted:=false
+var CharacterDescriptions:=[]
 signal transferTypeOfCharacter
 signal transferTypeOfAsset
 signal startAnimation

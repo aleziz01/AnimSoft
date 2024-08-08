@@ -1,6 +1,6 @@
-[gd_scene load_steps=122 format=3 uid="uid://dwu7dpjhnd45t"]
+[gd_scene load_steps=121 format=3 uid="uid://dwu7dpjhnd45t"]
 
-[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ujig"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_3wmqq"]
 [ext_resource type="Texture2D" uid="uid://d0hw4426mlyvb" path="res://Art/Characters/albert einstein.png" id="2_4p5ge"]
 [ext_resource type="Script" path="res://Scripts/AnimationController.gd" id="2_ob61g"]
 [ext_resource type="Texture2D" uid="uid://bjwvviec38hfc" path="res://Art/GUI details/frame.png" id="3_t4dv4"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://c6f8q40mnus71" path="res://Art/Characters/william shakespeare left talking.png" id="14_ulnfv"]
 [ext_resource type="Texture2D" uid="uid://k4ehf8c87s6b" path="res://Art/Characters/MihaiEminescuTalkingRight.png" id="15_6s8ul"]
 [ext_resource type="Texture2D" uid="uid://cko6xx27ymop3" path="res://Art/Characters/Ion CreangaTalkingRight.png" id="15_cd31w"]
-[ext_resource type="Script" path="res://Scenes/MovementFunctionality.gd" id="16_kr4jn"]
 [ext_resource type="Texture2D" uid="uid://c2g4083r25hk5" path="res://Art/Characters/Ion GhicaLeft.png" id="16_muk18"]
 [ext_resource type="Texture2D" uid="uid://cwyf1h42gls6o" path="res://Art/Characters/Ion GhicaRight.png" id="17_e4vvr"]
 [ext_resource type="Texture2D" uid="uid://bs5l01dd2ormr" path="res://Art/Characters/Ion GhicaTalkingLeft.png" id="18_wnq8s"]
@@ -845,9 +844,9 @@ animations = [{
 
 [node name="Character" type="Node2D"]
 position = Vector2(0, 1)
-script = ExtResource("1_0ujig")
+script = ExtResource("1_3wmqq")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="AnimationController" type="CharacterBody2D" parent="."]
 texture_filter = 1
 scale = Vector2(5, 5)
 collision_layer = 5
@@ -855,24 +854,24 @@ collision_mask = 0
 input_pickable = true
 script = ExtResource("2_ob61g")
 
-[node name="SpriteSet" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="SpriteSet" type="AnimatedSprite2D" parent="AnimationController"]
 sprite_frames = SubResource("SpriteFrames_0m2dp")
 animation = &"MugurIsarescuLeft"
 
-[node name="TalkStartTimer" type="Timer" parent="CharacterBody2D"]
+[node name="TalkStartTimer" type="Timer" parent="AnimationController"]
 one_shot = true
 
-[node name="TalkingFor" type="Timer" parent="CharacterBody2D"]
+[node name="TalkingFor" type="Timer" parent="AnimationController"]
 one_shot = true
 
-[node name="TurnDelay" type="Timer" parent="CharacterBody2D"]
+[node name="TurnDelay" type="Timer" parent="AnimationController"]
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationController"]
 position = Vector2(1.57772e-30, 6)
 shape = SubResource("CapsuleShape2D_fvkys")
 
-[node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+[node name="Frame" type="Sprite2D" parent="AnimationController/CollisionShape2D"]
 visible = false
 position = Vector2(0, -5)
 texture = ExtResource("3_t4dv4")
@@ -968,7 +967,6 @@ offset_bottom = 6.0
 placeholder_text = "Movement Speed"
 
 [node name="MovementFunctionality" type="Node2D" parent="."]
-script = ExtResource("16_kr4jn")
 
 [node name="MOVEMENTSKATEBOARDYEAH" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -978,15 +976,15 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_r02go")
 frame_progress = 0.0247506
 
-[connection signal="input_event" from="CharacterBody2D" to="." method="_on_character_body_2d_input_event"]
-[connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
-[connection signal="mouse_exited" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_exited"]
-[connection signal="timeout" from="CharacterBody2D/TalkStartTimer" to="CharacterBody2D" method="_on_talk_start_timer_timeout"]
-[connection signal="timeout" from="CharacterBody2D/TalkingFor" to="CharacterBody2D" method="_on_talking_for_timeout"]
-[connection signal="timeout" from="CharacterBody2D/TurnDelay" to="CharacterBody2D" method="_on_turn_delay_timeout"]
-[connection signal="toggled" from="ExternalCharacterSettings/Turns?" to="CharacterBody2D" method="_on_turns_toggled"]
-[connection signal="toggled" from="ExternalCharacterSettings/LeftOrRight" to="CharacterBody2D" method="_on_left_or_right_toggled"]
+[connection signal="input_event" from="AnimationController" to="." method="_on_character_body_2d_input_event"]
+[connection signal="mouse_entered" from="AnimationController" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="AnimationController" to="." method="_on_character_body_2d_mouse_exited"]
+[connection signal="timeout" from="AnimationController/TalkStartTimer" to="AnimationController" method="_on_talk_start_timer_timeout"]
+[connection signal="timeout" from="AnimationController/TalkingFor" to="AnimationController" method="_on_talking_for_timeout"]
+[connection signal="timeout" from="AnimationController/TurnDelay" to="AnimationController" method="_on_turn_delay_timeout"]
+[connection signal="toggled" from="ExternalCharacterSettings/Turns?" to="AnimationController" method="_on_turns_toggled"]
+[connection signal="toggled" from="ExternalCharacterSettings/LeftOrRight" to="AnimationController" method="_on_left_or_right_toggled"]
 [connection signal="toggled" from="ExternalCharacterSettings/CheckifTalks" to="." method="_on_checkif_talks_toggled"]
 [connection signal="text_changed" from="ExternalCharacterSettings/CheckifTalks/TalkAnimationDuration" to="." method="_on_talk_animation_duration_text_changed"]
 [connection signal="text_changed" from="ExternalCharacterSettings/CheckifTalks/TalkAnimationDelayTextEdit" to="." method="_on_talk_animation_delay_text_edit_text_changed"]
-[connection signal="toggled" from="ExternalCharacterSettings/WillMove" to="CharacterBody2D" method="_on_will_move_toggled"]
+[connection signal="toggled" from="ExternalCharacterSettings/WillMove" to="AnimationController" method="_on_will_move_toggled"]

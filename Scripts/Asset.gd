@@ -1,25 +1,25 @@
 extends Node2D
 
-var ok=true
-var clickable=false
-var gettingdragged=false
-var AnimationStarted=false
-var charId=null
+var ok:=true
+var clickable:=false
+var gettingdragged:=false
+var AnimationStarted:=false
+var AssetId:=-1
 var Name
-var speed=0
-var SceneId=null
+var speed:=0
+var SceneId:=-1
 
 func _on_pickable_button_controller_transfer_type_of_asset(id,sceneid):
 	if(ok==true):
 		SceneId=sceneid
-		charId=global.storedAssets.size()
+		AssetId=global.storedAssets.size()
 		global.storedAssets.append($".")
-		$CharacterBody2D.spritename=global.AssetNames[id]
+		$CharacterBodyAsset.spritename=global.AssetNames[id]
 		Name=id
 		ok=false
 
 func _process(delta):
-	if(global.focusASSET!=charId):
+	if(global.focusASSET!=AssetId):
 		$PickableButtonController/Falls.hide()
 		$PickableButtonController/InfrontOrBehind.hide()
 	elif(AnimationStarted==false):
@@ -30,14 +30,14 @@ func _process(delta):
 			if(global.gettingdragged==false or gettingdragged==true):
 				global.gettingdragged=true
 				gettingdragged=true
-				global.focusASSET=charId
+				global.focusASSET=AssetId
 				global_position=get_global_mouse_position()
-				$CharacterBody2D/CollisionShape2D/Frame.show()
+				$CharacterBodyAsset/CollisionShape2D/Frame.show()
 		else:
-			if($CharacterBody2D/CollisionShape2D/Frame.visible==true):
+			if($CharacterBodyAsset/CollisionShape2D/Frame.visible==true):
 				global.gettingdragged=false
 				gettingdragged=false
-				$CharacterBody2D/CollisionShape2D/Frame.hide()
+				$CharacterBodyAsset/CollisionShape2D/Frame.hide()
 	else:
 		position.y+=speed*delta
 		
@@ -55,7 +55,7 @@ func animationStart():
 		if($PickableButtonController/Falls.button_pressed==true):
 			await get_tree().create_timer(int($PickableButtonController/Falls/Delay.text)).timeout
 			if($"PickableButtonController/Falls/WhoDoesItFallOn?".get_selected_id()==0):
-				$CharacterBody2D.set_collision_mask_value(3,true)
+				$CharacterBodyAsset.set_collision_mask_value(3,true)
 			AnimationStarted=true
 			while(speed<500):
 				await get_tree().create_timer(0.1).timeout

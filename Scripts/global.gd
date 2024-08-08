@@ -1,15 +1,15 @@
 extends Node
 
 #textures
-var CharacterNames=[]
-var AssetNames=[]
-var storedCharacters=[]
-var storedAssets=[]
-var gettingdragged=false
-var gettingdraggedASSET=false
-var focus=-1
-var focusASSET=-1
-var selectedSceneId=0
+var CharacterNames:=[]
+var AssetNames:=[]
+var storedCharacters:=[]
+var storedAssets:=[]
+var gettingdragged:=false
+var gettingdraggedASSET:=false
+var focus:=-1
+var focusASSET:=-1
+var selectedSceneId:=0
 
 func _ready():
 	CharacterNames.append("AlbertEinstein")

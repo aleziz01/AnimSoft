@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://chb01cgxrue8q"]
 
 [ext_resource type="Script" path="res://Scripts/Asset.gd" id="1_lokag"]
-[ext_resource type="Script" path="res://Scenes/CharacterBodyAsset.gd" id="2_xcbvf"]
+[ext_resource type="Script" path="res://Scripts/CharacterBodyAsset.gd" id="2_3gwte"]
 [ext_resource type="Texture2D" uid="uid://bjyipskipdu1t" path="res://Art/Assets/AssetFrame.png" id="3_i0kgd"]
 [ext_resource type="Texture2D" uid="uid://calwapxpp2fs0" path="res://Art/Assets/painting.png" id="4_8nuya"]
 [ext_resource type="Texture2D" uid="uid://bsqvb6p4uqpb6" path="res://Art/Assets/apple.png" id="4_pwopb"]
@@ -49,22 +49,22 @@ animations = [{
 [node name="Asset" type="Node2D"]
 script = ExtResource("1_lokag")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBodyAsset" type="CharacterBody2D" parent="."]
 scale = Vector2(6, 6)
 collision_mask = 2
 input_pickable = true
 motion_mode = 1
-script = ExtResource("2_xcbvf")
+script = ExtResource("2_3gwte")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBodyAsset"]
 z_index = 1
 shape = SubResource("RectangleShape2D_eya8p")
 
-[node name="Frame" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+[node name="Frame" type="Sprite2D" parent="CharacterBodyAsset/CollisionShape2D"]
 texture_filter = 1
 texture = ExtResource("3_i0kgd")
 
-[node name="Animations+Sprites" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="Animations+Sprites" type="AnimatedSprite2D" parent="CharacterBodyAsset"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i0nnc")
 animation = &"Apple"
@@ -109,9 +109,9 @@ popup/item_0/id = 0
 popup/item_1/text = "Floor"
 popup/item_1/id = 1
 
-[connection signal="mouse_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_entered"]
-[connection signal="mouse_exited" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_exited"]
-[connection signal="toggled" from="PickableButtonController/InfrontOrBehind" to="CharacterBody2D" method="_on_infront_or_behind_toggled"]
+[connection signal="mouse_entered" from="CharacterBodyAsset" to="." method="_on_character_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterBodyAsset" to="." method="_on_character_body_2d_mouse_exited"]
+[connection signal="toggled" from="PickableButtonController/InfrontOrBehind" to="CharacterBodyAsset" method="_on_infront_or_behind_toggled"]
 [connection signal="toggled" from="PickableButtonController/Falls" to="." method="_on_falls_toggled"]
-[connection signal="toggled" from="PickableButtonController/Falls" to="CharacterBody2D" method="_on_falls_toggled"]
-[connection signal="item_selected" from="PickableButtonController/Falls/WhoDoesItFallOn?" to="CharacterBody2D" method="_on_who_does_it_fall_on_item_selected"]
+[connection signal="toggled" from="PickableButtonController/Falls" to="CharacterBodyAsset" method="_on_falls_toggled"]
+[connection signal="item_selected" from="PickableButtonController/Falls/WhoDoesItFallOn?" to="CharacterBodyAsset" method="_on_who_does_it_fall_on_item_selected"]

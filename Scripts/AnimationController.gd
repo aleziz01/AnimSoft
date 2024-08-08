@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var spritename="AlbertEinstein"
+var spritename:="AlbertEinstein"
 
 const SPEED = 200.0
 
-var left=false
-var talking=false
+var left:=false
+var talking:=false
 func _process(delta):
 	if(talking==false):
 		if(left==true):

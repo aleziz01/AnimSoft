@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var spritename="AlbertEinstein"
-var rng = RandomNumberGenerator.new()
+var spritename:="AlbertEinstein"
+var rng:=RandomNumberGenerator.new()
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
