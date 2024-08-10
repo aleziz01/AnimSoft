@@ -18,6 +18,10 @@ var SmartFemaleTeacherText:="This teacher is really chill!"
 var AngryFemaleTeacherText:="This teacher is not really chill at all..."
 var ScientistText:="Science guy!!!"
 var MugurIsarescuText:="Mugur Isarescu is a..."
+var Boy1Text:="This is a first grader!"
+var Boy2Text:="This is a first grader!"
+var Girl1Text:="This is a first grader!"
+var Girl2Text:="This is a first grader!"
 
 var animStarted:=false
 var CharacterDescriptions:=[]
@@ -45,6 +49,10 @@ func _ready():
 	CharacterDescriptions.append(AngryFemaleTeacherText)
 	CharacterDescriptions.append(ScientistText)
 	CharacterDescriptions.append(MugurIsarescuText)
+	CharacterDescriptions.append(Boy1Text)
+	CharacterDescriptions.append(Boy2Text)
+	CharacterDescriptions.append(Girl1Text)
+	CharacterDescriptions.append(Girl2Text)
 
 var fading=false
 func FadeInAndOut():

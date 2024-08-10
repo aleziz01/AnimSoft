@@ -82,6 +82,10 @@ func ChangeYposition():
 		$AnimationController.position.y+=5
 
 func animationStart():
+	if($AnimationController.spritename=="MugurIsarescu"):
+		$AnimationController/CollisionShape2D.scale=Vector2(1,1.1)
+	elif($AnimationController.spritename=="Boy1" or $AnimationController.spritename=="Boy2" or $AnimationController.spritename=="Girl1" or $AnimationController.spritename=="Girl2"):
+		$AnimationController/CollisionShape2D.scale=Vector2(0.6,0.6)
 	if(SceneId==global.selectedSceneId and animationAlreadyStarted==false):
 		$AnimationController/CollisionShape2D.disabled=false
 		animationAlreadyStarted=true

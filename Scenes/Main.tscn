@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://qn864xktqajq"]
+[gd_scene load_steps=36 format=3 uid="uid://qn864xktqajq"]
 
 [ext_resource type="Texture2D" uid="uid://bcpwgdkguiqq8" path="res://Art/GUI details/ScenesButton.png" id="1_vaitn"]
 [ext_resource type="Texture2D" uid="uid://gnwws4kfntwc" path="res://Art/GUI details/backgrounds decal.png" id="2_l2i4w"]
@@ -20,7 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://o65fmpuegl8j" path="res://Art/Characters/MihaiEminescuRight.png" id="13_aq31n"]
 [ext_resource type="Texture2D" uid="uid://bsqvb6p4uqpb6" path="res://Art/Assets/apple.png" id="13_f7crs"]
 [ext_resource type="Texture2D" uid="uid://dxfsx2wk26w6x" path="res://Art/Characters/BenjaminFranklinRight.png" id="14_wsc0m"]
+[ext_resource type="Texture2D" uid="uid://dyaf3ft8tajm" path="res://Art/Characters/MaleChild1Left.png" id="15_g65cr"]
+[ext_resource type="Texture2D" uid="uid://0wwe8uqlchf2" path="res://Art/Characters/MaleChild2Left.png" id="16_kw6eb"]
 [ext_resource type="Texture2D" uid="uid://buc0qmmjeyl3t" path="res://Art/Characters/Ion CreangaLeft.png" id="17_golnr"]
+[ext_resource type="Texture2D" uid="uid://b5qin07ug57uw" path="res://Art/Characters/FemaleChildLeft.png" id="17_wxs7w"]
+[ext_resource type="Texture2D" uid="uid://cviqhq85jnqsb" path="res://Art/Characters/FemaleChild2Left.png" id="18_0v6mr"]
 [ext_resource type="Texture2D" uid="uid://c2g4083r25hk5" path="res://Art/Characters/Ion GhicaLeft.png" id="18_78i83"]
 [ext_resource type="Texture2D" uid="uid://b4ppfquvmseev" path="res://Art/Characters/neil armstrongLeft.png" id="19_trrm7"]
 [ext_resource type="Texture2D" uid="uid://c8h4717lqdc3v" path="res://Art/GUI details/ScenesAdderButton.png" id="20_5kmlp"]
@@ -145,11 +149,19 @@ offset_bottom = -332.0
 scale = Vector2(0.81, 0.81)
 icon = ExtResource("6_pef5q")
 expand_icon = true
-item_count = 2
-popup/item_0/text = "Spectator1"
+item_count = 4
+popup/item_0/text = "Boy1"
+popup/item_0/icon = ExtResource("15_g65cr")
 popup/item_0/id = 0
-popup/item_1/text = "Spectator2"
+popup/item_1/text = "Boy2"
+popup/item_1/icon = ExtResource("16_kw6eb")
 popup/item_1/id = 1
+popup/item_2/text = "Girl1"
+popup/item_2/icon = ExtResource("17_wxs7w")
+popup/item_2/id = 2
+popup/item_3/text = "Girl2"
+popup/item_3/icon = ExtResource("18_0v6mr")
+popup/item_3/id = 3
 
 [node name="CharacterAdder" type="MenuButton" parent="BackgroundElements/PickableButtonController"]
 texture_filter = 1
