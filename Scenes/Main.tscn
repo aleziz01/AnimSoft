@@ -31,9 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://buqy8s7llj5j" path="res://Art/Characters/WiseJapaneseManRight.png" id="22_q1t0v"]
 [ext_resource type="Texture2D" uid="uid://b051p0ittg0fg" path="res://Art/Characters/SmartFemaleTeacherLeft.png" id="24_fqpxf"]
 [ext_resource type="Texture2D" uid="uid://ci1sid5st5bnq" path="res://Art/Characters/AngryFemaleTeacherLeft.png" id="25_khjct"]
-[ext_resource type="Texture2D" uid="uid://gfwamjie1ujc" path="res://Art/GUI details/exitButton.png" id="25_ssbba"]
 [ext_resource type="Texture2D" uid="uid://du0fj5q6hx3mc" path="res://Art/Characters/scientistLeft.png" id="26_6jm7f"]
 [ext_resource type="Texture2D" uid="uid://xobgdcvlwetf" path="res://Art/Characters/MuguriIsarescuLeft.png" id="27_b608g"]
+[ext_resource type="Texture2D" uid="uid://dobe7xpf66brp" path="res://Art/GUI details/Exit Button.png" id="33_vw104"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5ffx"]
 normal = Vector2(-0.00172117, -0.999999)
@@ -43,7 +43,7 @@ distance = -45.4113
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioForTheAnimation" type="AudioStreamPlayer" parent="."]
 
 [node name="FadeInnOut" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -89,10 +89,10 @@ offset_bottom = 492.0
 texture_normal = ExtResource("10_nyiqv")
 
 [node name="CharacterDescription" type="RichTextLabel" parent="BackgroundElements/PickableButtonController"]
-offset_left = 611.0
-offset_top = 89.0
-offset_right = 930.0
-offset_bottom = 520.0
+offset_left = 612.0
+offset_top = 181.0
+offset_right = 916.0
+offset_bottom = 505.0
 text = "Einstein a fost..."
 
 [node name="readyButton" type="TextureButton" parent="BackgroundElements/PickableButtonController"]
@@ -109,13 +109,16 @@ offset_left = 813.0
 offset_top = -352.0
 offset_right = 932.0
 offset_bottom = -260.0
-item_count = 3
+item_count = 4
+selected = 1
 popup/item_0/text = "1"
 popup/item_0/id = 0
 popup/item_1/text = "2"
 popup/item_1/id = 1
 popup/item_2/text = "3"
 popup/item_2/id = 2
+popup/item_3/text = "4"
+popup/item_3/id = 3
 
 [node name="AssetAdder" type="MenuButton" parent="BackgroundElements/PickableButtonController"]
 texture_filter = 1
@@ -239,12 +242,12 @@ placeholder_text = "How long will it last?"
 
 [node name="Exit" type="TextureButton" parent="BackgroundElements/PickableButtonController"]
 texture_filter = 1
-offset_left = -519.0
-offset_top = 358.0
-offset_right = -459.0
-offset_bottom = 424.0
+offset_left = -542.0
+offset_top = 362.0
+offset_right = -478.0
+offset_bottom = 426.0
 scale = Vector2(2, 2)
-texture_normal = ExtResource("25_ssbba")
+texture_normal = ExtResource("33_vw104")
 
 [node name="PageButton" type="OptionButton" parent="BackgroundElements/PickableButtonController"]
 offset_left = 882.0
@@ -258,12 +261,19 @@ popup/item_0/id = 0
 popup/item_1/text = "2"
 popup/item_1/id = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BackgroundElements/PickableButtonController"]
+[node name="PageShower" type="RichTextLabel" parent="BackgroundElements/PickableButtonController"]
 offset_left = 890.0
 offset_top = -469.0
 offset_right = 943.0
 offset_bottom = -442.0
 text = "Page:"
+
+[node name="Instructions" type="RichTextLabel" parent="BackgroundElements/PickableButtonController"]
+offset_left = 614.0
+offset_top = 88.0
+offset_right = 927.0
+offset_bottom = 161.0
+text = "Remember to configure the output file and sound! And install VLC media player to play the movies"
 
 [node name="Scenes" type="Node2D" parent="."]
 position = Vector2(-192, -108)

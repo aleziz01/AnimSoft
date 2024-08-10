@@ -36,6 +36,7 @@ func _ready():
 	BackgroundTextures.append(preload("res://Art/Backgrounds/BackgroundRandom.png"))
 	BackgroundTextures.append(preload("res://Art/Backgrounds/stage.png"))
 	BackgroundTextures.append(preload("res://Art/Backgrounds/isaac newton's tree.png"))
+	BackgroundTextures.append(preload("res://Art/Backgrounds/sala de scrima.png"))
 	CharacterDescriptions.append(AlbertEinsteinText)
 	CharacterDescriptions.append(IsaacNewtonText)
 	CharacterDescriptions.append(WilliamShakespeareText)
@@ -143,6 +144,7 @@ func _on_AssetAdder_pressed(id):
 	emit_signal("transferTypeOfAsset",id,global.selectedSceneId)
 
 func _on_ready_button_pressed():
+	$"../../AudioForTheAnimation".play()
 	global.focus=-1
 	global.focusASSET=-1
 	$"../../Scenes".scale+=Vector2(0.2,0.2)

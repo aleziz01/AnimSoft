@@ -29,7 +29,7 @@ window/stretch/aspect="ignore"
 [editor]
 
 movie_writer/mjpeg_quality=1.0
-movie_writer/movie_file="C:/Users/alexa/Documents/Godot Personal Projects/Movies/Movie.avi"
+movie_writer/movie_file="C:/Users/alexa_hv7pdoq/OneDrive/Documente/Github/AnimSoft/Movie.avi"
 movie_writer/fps=30
 
 [input]
